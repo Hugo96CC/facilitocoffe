@@ -1,0 +1,197 @@
+body{
+
+    margin: 0em;
+    font-family: 'Noto Sans', sans-serif;/*Fuente paar el cuerpo de la pagina web*/
+}
+
+/*Fuente para los titulos*/
+h1,h2,h3,h4,h5{
+
+    font-family: 'Fjalla One', sans-serif;
+}
+
+
+.cover {/*Selector*/
+
+
+    height: 400px;
+    background-image:url(https://cdn.glitch.global/ab55dcd4-ad65-4ac3-b777-cf880174f70e/portada.jpg?v=1656472697184) ;/*Portada de pagina de inicio*/
+    color:white; /* Color de la letra*/
+    background-size: cover;/*Indicamos el tamaño sera igual a lo que mida cover*/
+    background-position: center; /*Nos centra la imagen si importar el tamaño del dispositivo que se este visualizando*/
+    background-color: rgba(0, 0, 0, 0.5); /* Nos permite opacar la imagen de la portada  y se pueda ver el anuncio*/
+    background-blend-mode: darken; /* Nos permite opacar la imagen de la portada  y se pueda ver el anuncio*/
+
+
+
+}
+
+
+
+/*Alineamos las tarjetas(Imagenes) */
+.cover-small{
+
+    height: 200px;
+    background-blend-mode: normal;
+}
+
+
+/*Las 3 tarjetas de la pagina de inicio*/
+.card{
+
+    border: 0 !important;/*Colocamos el birde*/
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.6); /*Colamos una sombra en la tarjeta*/
+}
+
+/*Alineamos el titulo*/
+.card-title{
+
+    min-height: 3rem;
+
+}
+
+/*Alineamos el texto*/
+.card-text{
+
+    min-height: 10rem;
+}
+
+/*Tira de productos*/
+
+.product-stripe, .slider{
+
+
+    overflow-x: scroll; /*Colocamos un Scroll para que se muevan nuestros productos*/
+    padding-top: 1rem; /*Damos un espacio de arriba*/
+    padding-bottom: 1rem; /*Damos un espacio de abajo*/
+}
+
+.stripe-container, .slider-container{
+
+    display: flex;
+
+
+}
+
+.stripe-container .card{
+
+    width: 300px; /*Especificamos la anchura de las tarjetas de productos*/
+    flex-shrink: 0;/*Indicamos que no queremos que se redimensionen*/
+    margin-right: 1rem; /*Espacio entre los productos*/
+
+}
+
+
+/*Haciendo responsivo nuestro mapa de Google MAps*/
+
+.responsive-iframe{
+
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.responsive-iframe iframe{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Imagenes del Slider */
+
+
+.slider{
+
+    overflow-x: hidden;/*Mantiene fija la imagnes para que no se desplacen(Falta animacion de movimiento)*/
+    
+    
+}
+
+.slider-container{
+
+    transform: translateX(0);
+    animation: slider 20s infinite;/*Tiempo de cada cuanto cambia una imagen*/
+
+}
+
+.image-container{
+
+    width: 100%;
+    padding-top: 56.25%;
+    background-size: cover;/*Redimensiona apropiadamente*/
+    background-position: center;
+    flex-shrink: 0; /*Coloca una imagen a lado de la otra */
+    
+}
+
+
+/*Clase avatar*/
+
+.avatar{
+
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;/*Centrando la imagen del avatar*/
+
+}
+
+
+
+/*Creacion de un aanimacion*/
+
+@keyframes slider{
+
+    0%{
+        transform: translateX(0);
+    }
+
+    /*Permite que la image incial se vea*/
+    20%{
+        transform: translateX(0);
+    }
+
+
+    /*Cambiamos a la 2da imagen*/
+    25%{
+        transform: translateX(-100%);
+
+    }
+
+    /*Permite que se vea la 2da imagen*/
+    45%{
+        transform: translateX(-100%);
+    }
+
+    /*Cambiamos a la 3ra imagen*/
+    50%{
+        transform: translateX(-200%);
+    }
+
+    /*Permite que se vea la 3ra imagen*/
+    70%{
+        transform: translateX(-200%);
+    }
+
+
+    /*Cambiamos a la 4ta imagen*/
+    75%{
+        transform: translateX(-300%);
+    }
+
+     /*Permite que se vea la 4taa imagen*/
+    95%{
+        transform: translateX(-300%);
+    }
+
+
+    /*Regresa a su estado original*/
+    100%{
+
+       transform: translateX(0);
+    }
+}
+
